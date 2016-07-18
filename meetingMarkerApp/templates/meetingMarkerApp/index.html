@@ -3,3 +3,13 @@
 
 
 <h1>Arrived</h1>
+{% for eachMeeting in meetings %}
+    <p>Title: {{ eachMeeting.title }}</p>
+    <p>start: {{ eachMeeting.startTime }}</p>
+    <p>end: {{ eachMeeting.endTime }}</p>
+    <p>Users:</p>
+    {% for eachUser in eachMeeting.users.all %}
+        <p>{{ eachUser.first_name }}</p>
+    {% endfor %}
+    <p>_________________________________</p>
+{% endfor %}
